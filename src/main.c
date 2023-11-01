@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:36:24 by gabe              #+#    #+#             */
-/*   Updated: 2023/10/31 16:20:42 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/01 16:35:47 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     if (argc == 2)
         argv = ft_split_argv(argv[1], ' ');
     //ft_init_stack(a)
-    if (!(/*ft_is_sorted(a)*/))
+    /*if (!(ft_is_sorted(a)))
     {
         if (ft_lstsize(a) == 2)
             //sa
@@ -32,7 +32,8 @@ int main(int argc, char **argv)
             //tiny_sort
         else
             //push_swap
-    }
-
+    }*/
+    free(a);
+    free(b);
     return(0);
 }

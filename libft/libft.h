@@ -6,7 +6,7 @@
 /*   By: gamoreir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:17:45 by gamoreir          #+#    #+#             */
-/*   Updated: 2023/04/23 17:06:45 by gamoreir         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:59:53 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include	<stdlib.h>
 # include	<stdio.h>
 # include	<ctype.h>
+# include	<stdarg.h>
 
 typedef struct s_list
 {
@@ -25,7 +26,24 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-//>>> Libc functions <<<
+//>>> get_next_line <<<
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
+
+char	*get_next_line(int fd);
+
+//>>> ft_printf <<<
+
+int		ft_printf(const char *str, ...);
+int		ft_printf_char(char c);
+int		ft_printf_string(char *str);
+int		ft_printf_pointer(unsigned long nb);
+int		ft_printf_number(long nb);
+int		ft_printf_hexadecimal(unsigned long nb, char c);
+
+//>>> libft <<<
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -51,7 +69,7 @@ size_t	ft_strlcpy(char *dest, char *src, size_t n);
 size_t	ft_strlcat(char *dest, char *src, size_t n);
 size_t	ft_strlen(const char *str);
 
-//>>> Aditional functions <<<
+//>>> libft additional <<<
 
 char	*ft_strmapi(char const *str, char (*f)(unsigned int, char));
 char	*ft_substr(char const *str, unsigned int start, size_t len);
@@ -65,7 +83,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
-//>>> BONUS FUNCTIONS<<<
+//>>> libft bonus <<<
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));

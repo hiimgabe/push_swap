@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 16:05:14 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/01 15:10:02 by gabe             ###   ########.fr       */
+/*   Created: 2023/11/01 15:19:26 by gabe              #+#    #+#             */
+/*   Updated: 2023/11/01 16:19:10 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_init_stack(t_node *stack, char **argv)
+void    pa(t_node **a, t_node *b)
 {
-	long	nb;
-	int i;
+    b->next = *a;
+    ft_printf("pa\n");
+}
 
-	i = 1;
-	while (argv[i])
-	{
-		nb = ft_atol(argv[i]);
-		ft_insert_end(&stack, nb);
-	}
+void    pb(t_node **b, t_node *a)
+{
+    a->next = *b;
+    ft_printf("pb\n");
 }

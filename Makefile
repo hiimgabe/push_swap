@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = src/main.c src/init.c src/utils.c src/node_utils.c
+SRC = src/main.c src/init.c src/utils.c src/node_utils.c src/split.c src/swap.c
 
 OBJ = ${SRC:.c=.o}
 
@@ -11,7 +11,6 @@ INCLUDE = -I include
 MAKE = make -C
 LIBFT_PATH = libft
 LIBFT = -L ${LIBFT_PATH} -lft
-
 .c.o:
 	${CC} ${CFLAGS} ${INCLUDE} -c $< -o ${<:.c=.o}
 
