@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = src/main.c src/init.c src/utils.c src/node_utils.c src/split.c src/swap.c
+SRC = src/main.c src/init.c src/utils.c src/node_utils.c src/split.c src/swap.c src/push.c src/rotate.c
 
 OBJ = ${SRC:.c=.o}
 

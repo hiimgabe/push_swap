@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:36:24 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/01 16:35:47 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/02 13:52:41 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main(int argc, char **argv)
 {
     t_node  *a;
     t_node  *b;
+    int i = 1;
 
     a = NULL;
     b = NULL;
@@ -33,6 +34,21 @@ int main(int argc, char **argv)
         else
             //push_swap
     }*/
+    while (argv[i] != 0)
+    {
+        ft_insert_end(&a, ft_atol(argv[i]));
+        i++;
+    }
+    while (a)
+    {
+        ft_printf("a: %d\n", a->value);
+        a = a->next;
+    }
+    while (b)
+    {
+        ft_printf("b: %d\n", b->value);
+        b = b->next;
+    }
     free(a);
     free(b);
     return(0);
