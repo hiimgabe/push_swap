@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:36:24 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/02 13:52:41 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/02 14:24:54 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,16 @@ int main(int argc, char **argv)
     while (argv[i] != 0)
     {
         ft_insert_end(&a, ft_atol(argv[i]));
+        ft_insert_end(&b, ft_atol(argv[i]));
         i++;
     }
+    rr(&a, &b, true);
     while (a)
     {
         ft_printf("a: %d\n", a->value);
         a = a->next;
     }
+    ft_printf("\n\n");
     while (b)
     {
         ft_printf("b: %d\n", b->value);

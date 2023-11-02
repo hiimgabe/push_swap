@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:37:56 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/02 12:57:38 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/02 14:15:50 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,20 @@ void	ft_insert_end(t_node **stack, long nb)
 		*stack = new_node;
 	else
 	{
-		last = ft_get_last_node(*stack);
+		last = ft_get_last_node(*stack, false);
 		last->next = new_node;
 	}
 }
 
-t_node	*ft_get_last_node(t_node *stack)
+t_node	*ft_get_last_node(t_node *stack, bool second_last)
 {
 	if (!stack)
 		return (NULL);
-	while (stack->next)
-		stack = stack->next;
+	if (!second_last)
+		while (stack->next)
+			stack = stack->next;
+	else
+		while (stack->next->next)
+			stack = stack->next;
 	return(stack);
 }
