@@ -23,14 +23,15 @@ typedef struct s_node
 char	**ft_split_argv(char const *str, char c);
 
 // UTILS
+int		ft_lst_size(t_node *stack);
 int		ft_atol(const char *str);
-
-// NODE
+int		ft_highest(t_node *stack);
+bool	ft_is_sorted(t_node *stack);
 void	ft_insert_end(t_node **root, long value);
 t_node	*ft_get_last_node(t_node *stack, bool second_last);
 
 // STACK
-void    ft_init_stack(t_node *stack, char **argv);
+void    ft_init_stack(t_node **stack, char **argv);
 
 // SWAP
 void	ft_swap(t_node **stack);
@@ -44,6 +45,9 @@ void	pa(t_node **stack_a, t_node **stack_b);
 void	ra(t_node **stack, bool reverse);
 void	rb(t_node **stack, bool reverse);
 void	rr(t_node **stack_a, t_node **stack_b, bool reverse);
+
+// TINY SORT
+void    tiny_sort(t_node **a);
 
 // PUSH
 

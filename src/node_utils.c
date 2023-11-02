@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:37:56 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/02 14:15:50 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/02 15:03:19 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,28 @@ t_node	*ft_get_last_node(t_node *stack, bool second_last)
 		while (stack->next->next)
 			stack = stack->next;
 	return(stack);
+}
+
+bool	ft_is_sorted(t_node *stack)
+{
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
+}
+
+int	ft_lst_size(t_node *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		i++;
+		stack = stack->next;
+	}
+	return (i);
 }

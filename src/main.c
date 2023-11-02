@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:36:24 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/02 14:24:54 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/02 15:27:14 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main(int argc, char **argv)
 {
+    int i = 0;
     t_node  *a;
     t_node  *b;
-    int i = 1;
 
     a = NULL;
     b = NULL;
@@ -24,7 +24,8 @@ int main(int argc, char **argv)
         return (1);
     if (argc == 2)
         argv = ft_split_argv(argv[1], ' ');
-    //ft_init_stack(a)
+    while(argv[++i])
+        ft_insert_end(&a, ft_atol(argv[i]));
     /*if (!(ft_is_sorted(a)))
     {
         if (ft_lstsize(a) == 2)
@@ -34,23 +35,10 @@ int main(int argc, char **argv)
         else
             //push_swap
     }*/
-    while (argv[i] != 0)
+    if (!ft_is_sorted(a))
     {
-        ft_insert_end(&a, ft_atol(argv[i]));
-        ft_insert_end(&b, ft_atol(argv[i]));
-        i++;
-    }
-    rr(&a, &b, true);
-    while (a)
-    {
-        ft_printf("a: %d\n", a->value);
-        a = a->next;
-    }
-    ft_printf("\n\n");
-    while (b)
-    {
-        ft_printf("b: %d\n", b->value);
-        b = b->next;
+        if(ft_lst_size(a) == 3)
+            tiny_sort(&a);
     }
     free(a);
     free(b);
