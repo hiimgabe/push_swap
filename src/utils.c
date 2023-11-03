@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:12:31 by gabe              #+#    #+#             */
-/*   Updated: 2023/10/31 16:33:54 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/03 17:55:11 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,32 @@ int	ft_atol(const char *str)
 		str++;
 	}
 	return (n * signs);
+}
+
+t_node	*ft_highest(t_node *stack)
+{
+    t_node *highest;
+
+    highest = stack;
+    while (stack)
+    {
+        if (stack->value > highest->value)
+            highest = stack;
+        stack = stack->next;
+    }
+    return (highest);
+}
+
+t_node	*ft_smallest(t_node *stack)
+{
+	t_node	*smallest;
+
+	smallest = stack;
+    while (stack)
+    {
+        if (stack->value < smallest->value)
+            smallest = stack;
+        stack = stack->next;
+    }
+    return (smallest);
 }

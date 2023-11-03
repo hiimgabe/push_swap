@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:37:56 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/02 15:03:19 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/03 17:40:15 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,25 @@ int	ft_lst_size(t_node *stack)
 		stack = stack->next;
 	}
 	return (i);
+}
+
+void	set_position(t_node *stack)
+{
+	int	pos;
+	int	median;
+
+	if (!stack)
+		return ;
+	pos = 0;
+	median = ft_lst_size(stack) / 2;
+	while (stack)
+	{
+		if (pos < median)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
+		stack->position = pos;
+		stack = stack->next;
+		pos++;
+	}
 }

@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   target.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 16:05:14 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/03 17:59:02 by gabe             ###   ########.fr       */
+/*   Created: 2023/11/03 16:53:21 by gabe              #+#    #+#             */
+/*   Updated: 2023/11/03 17:59:41 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_init_stack(t_node **stack, char **argv)
+void	set_target(t_node *a, t_node *b)
 {
-	int i;
+	long	best_target;
+	t_node	*start;
+	t_node	*target_node;
 
-	i = 0;
-	while (argv[++i])
+	start = a;
+	while (b)
 	{
-		ft_insert_end(stack, ft_atol(argv[i]));
+		best_target = INT_MAX;		
+		while (a)
+		{
+			if (a->value > b->value && a->value < best_target)
+			{
+				best_target = a->value;
+				target_node = a;
+			}
+			a = a->next;
+		}
+		a = start;
+		if (best_target == INT_MAX)
+			b->target = ft_smallest(a);
+		else
+			b->target = target_node;
+		b = b->next;
 	}
-}
-
-void	init_nodes(t_node **a, t_node **b)
-{
-	set_position(*a);
-	set_position(*b);
-	set_target(*a, *b);
-	//set_price(*a, *b);
 }

@@ -14,7 +14,7 @@ typedef struct s_node
 	int     value;
 	int     position;
 	int     price;
-	bool    median;
+	bool    above_median;
 	struct s_node  *next;
 	struct s_node  *target;
 } t_node;
@@ -25,10 +25,13 @@ char	**ft_split_argv(char const *str, char c);
 // UTILS
 int		ft_lst_size(t_node *stack);
 int		ft_atol(const char *str);
-int		ft_highest(t_node *stack);
-bool	ft_is_sorted(t_node *stack);
 void	ft_insert_end(t_node **root, long value);
+void	set_position(t_node *stack);
+void	set_target(t_node *a, t_node *b);
+bool	ft_is_sorted(t_node *stack);
 t_node	*ft_get_last_node(t_node *stack, bool second_last);
+t_node	*ft_smallest(t_node *stack);
+t_node	*ft_highest(t_node *stack);
 
 // STACK
 void    ft_init_stack(t_node **stack, char **argv);
@@ -50,5 +53,6 @@ void	rr(t_node **stack_a, t_node **stack_b, bool reverse);
 void    tiny_sort(t_node **a);
 
 // PUSH
+void	push_swap(t_node **a, t_node **b);
 
 #endif
