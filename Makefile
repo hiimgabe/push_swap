@@ -1,7 +1,7 @@
 NAME = push_swap
 
 SRC = src/main.c src/init.c src/utils.c src/node_utils.c src/split.c src/swap.c src/push.c src/rotate.c src/tiny_sort.c \
-		src/target.c src/price.c src/push_swap.c
+		src/target.c src/price.c src/push_swap.c src/push_to_b.c
 
 OBJ = ${SRC:.c=.o}
 

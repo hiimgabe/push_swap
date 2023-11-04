@@ -32,9 +32,14 @@ bool	ft_is_sorted(t_node *stack);
 t_node	*ft_get_last_node(t_node *stack, bool second_last);
 t_node	*ft_smallest(t_node *stack);
 t_node	*ft_highest(t_node *stack);
+t_node	*ft_cheapest(t_node *stack);
+
+// INIT
+void	init_nodes(t_node **a, t_node **b);
 
 // STACK
 void    ft_init_stack(t_node **stack, char **argv);
+void	smallest_to_top(t_node **stack, t_node *smallest, char c);
 
 // SWAP
 void	ft_swap(t_node **stack);
@@ -51,6 +56,7 @@ void	rr(t_node **stack_a, t_node **stack_b, bool reverse);
 
 // TINY SORT
 void    tiny_sort(t_node **a);
+
 
 // PUSH
 void	push_swap(t_node **a, t_node **b);

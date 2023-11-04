@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:37:56 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/03 17:40:15 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/04 13:36:16 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,39 @@ void	set_position(t_node *stack)
 		stack = stack->next;
 		pos++;
 	}
+}
+
+void	smallest_to_top(t_node **stack, t_node *smallest, char c)
+{
+	while (*stack != smallest)
+	{
+		if (c == 'a')
+		{
+			if (smallest->above_median)
+				ra(stack, false);
+			else
+				rra(stack, true);
+		}
+		else
+		{
+			if (smallest->above_median)
+				rb(stack, false);
+			else
+				rrb(stack, true);
+		}
+	}
+}
+
+t_node	*ft_cheapest(t_node *stack)
+{
+	t_node	*cheapest;
+
+	cheapest = stack;
+	while (stack)
+	{
+		if (stack->price < cheapest->price)
+			cheapest = stack;
+		stack = stack->next;
+	}
+	return (cheapest);
 }
