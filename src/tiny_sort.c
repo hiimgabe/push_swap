@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:42:26 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/04 12:14:43 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/05 01:48:34 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,13 @@ void    tiny_sort(t_node **a)
 {
 	t_node *highest;
 
-	highest = *a;
-	while (a)
-	{
-        if (*a == highest)
-            ra(a, false);
-        else if ((*a)->next == highest)
-            ra(a, true);
-        else if ((*a)->value > (*a)->next->value)
-            sa(a);
-        if (ft_is_sorted(*a))
-            return ;
-	}
+	highest = ft_highest(*a);
+	if (highest == *a)
+		ra(a, false);
+	else if (highest == (*a)->next)
+		ra(a, true);
+	else if ((*a)->value > (*a)->next->value)
+		sa(a);
 }
 
 void	small_sort(t_node **a, t_node **b)

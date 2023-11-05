@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:37:56 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/04 13:36:16 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/05 02:00:10 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_insert_end(t_node **stack, long nb)
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)
 		return ;
-	new_node->next = NULL;
 	new_node->value = (int)nb;
+	new_node->next = NULL;
 	if (!*stack)
 		*stack = new_node;
 	else
@@ -62,8 +62,8 @@ int	ft_lst_size(t_node *stack)
 	i = 0;
 	while (stack)
 	{
-		i++;
 		stack = stack->next;
+		i++;
 	}
 	return (i);
 }
@@ -79,11 +79,11 @@ void	set_position(t_node *stack)
 	median = ft_lst_size(stack) / 2;
 	while (stack)
 	{
+		stack->position = pos;
 		if (pos < median)
 			stack->above_median = true;
 		else
 			stack->above_median = false;
-		stack->position = pos;
 		stack = stack->next;
 		pos++;
 	}
@@ -98,14 +98,14 @@ void	smallest_to_top(t_node **stack, t_node *smallest, char c)
 			if (smallest->above_median)
 				ra(stack, false);
 			else
-				rra(stack, true);
+				ra(stack, true);
 		}
 		else
 		{
 			if (smallest->above_median)
 				rb(stack, false);
 			else
-				rrb(stack, true);
+				rb(stack, true);
 		}
 	}
 }

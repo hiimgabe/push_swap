@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 12:52:59 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/04 13:31:34 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/05 00:51:42 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_node	*get_node(t_node *a, int i)
 
 int	descent_ocurr(t_node *a, int mid)
 {
-	int	ocurr;
+	int		ocurr;
 	t_node	*last;
 
 	ocurr = ft_lst_size(a);
@@ -95,8 +95,8 @@ int	*sorted_stack(t_node *a)
 	size = ft_lst_size(a);
 	sorted = (int *)malloc(sizeof(int) * size);
 	if (!sorted)
-		return NULL;
-	while (a)
+		return (NULL);
+	while (i < size)
 	{
 		sorted[i] = a->value;
 		a = a->next;
@@ -114,9 +114,9 @@ void	push_to_b(t_node **a, t_node **b)
 
 	while (ft_lst_size(*a) > 3)
 	{
-		sorted = sorted_stack(a);
-		mid = sorted[ft_lst_size(a) / 2];
-		rotate = ft_lst_size(a) / 2;
+		sorted = sorted_stack(*a);
+		mid = sorted[ft_lst_size(*a) / 2];
+		rotate = ft_lst_size(*a) / 2;
 		while (rotate-- > 0)
 		{
 			if ((*a)->value < mid)

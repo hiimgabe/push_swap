@@ -34,6 +34,9 @@ t_node	*ft_smallest(t_node *stack);
 t_node	*ft_highest(t_node *stack);
 t_node	*ft_cheapest(t_node *stack);
 
+// PRICE
+void	set_price(t_node *a, t_node *b);
+
 // INIT
 void	init_nodes(t_node **a, t_node **b);
 
@@ -45,6 +48,7 @@ void	smallest_to_top(t_node **stack, t_node *smallest, char c);
 void	ft_swap(t_node **stack);
 void    ft_push(t_node **push, t_node **stack);
 void    ft_rotate(t_node **stack, bool reverse);
+void	ft_rotate_both(t_node **a, t_node **b, bool reverse);
 void	sa(t_node **stack);
 void	sb(t_node **stack);
 void	ss(t_node **stack_a, t_node **stack_b);
@@ -52,11 +56,13 @@ void    pb(t_node **stack_a, t_node **stack_b);
 void	pa(t_node **stack_a, t_node **stack_b);
 void	ra(t_node **stack, bool reverse);
 void	rb(t_node **stack, bool reverse);
-void	rr(t_node **stack_a, t_node **stack_b, bool reverse);
+void	rr(t_node **a, t_node **b, bool reverse);
 
 // TINY SORT
 void    tiny_sort(t_node **a);
+void	small_sort(t_node **a, t_node **b);
 
+void	push_to_b(t_node **a, t_node **b);
 
 // PUSH
 void	push_swap(t_node **a, t_node **b);

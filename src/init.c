@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:05:14 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/04 12:01:33 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/05 00:05:15 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void    ft_init_stack(t_node **stack, char **argv)
 {
-	int i;
+	long	nb;
+	int 	i;
 
-	i = 0;
-	while (argv[++i])
+	i = 1;
+	while (argv[i])
 	{
-		ft_insert_end(stack, ft_atol(argv[i]));
+		nb = ft_atol(argv[i]);
+		ft_insert_end(stack, nb);
+		i++;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 13:46:53 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/02 14:25:12 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/05 00:42:29 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 void    ft_rotate(t_node **stack, bool reverse)
 {
-	t_node	*first;
+	t_node	*rotate;
 	t_node	*last;
 	t_node	*second_last;
 
-	if (!stack || !*stack /*|| stack_len == 1*/)
+	if (!stack || !*stack || ft_lst_size(*stack) == 1)
 		return ;
-	first = *stack;
+	rotate = *stack;
 	last = ft_get_last_node(*stack, false);
 	second_last = ft_get_last_node(*stack, true);
 	if (!reverse)
 	{
 		*stack = (*stack)->next;
-		last->next = first;
-		first->next = NULL;
+		last->next = rotate;
+		rotate->next = NULL;
 	}
 	else
 	{
@@ -55,12 +55,27 @@ void	rb(t_node **stack, bool reverse)
 		ft_printf("rrb\n");
 }
 
-void	rr(t_node **stack_a, t_node **stack_b, bool reverse)
+void	rr(t_node **a, t_node **b, bool reverse)
 {
-	ft_rotate(stack_a, reverse);
-	ft_rotate(stack_b, reverse);
 	if (!reverse)
+	{
+		ft_rotate(a, false);
+		ft_rotate(b, false);
 		ft_printf("rr\n");
+	}
 	else
+	{
+		ft_rotate(a, true);
+		ft_rotate(b, true);
 		ft_printf("rrr\n");
+	}
+}
+
+void	ft_rotate_both(t_node **a, t_node **b, bool reverse)
+{
+	t_node *cheapest;
+
+	cheapest = ft_cheapest(*b);
+	while (cheapest != *b && cheapest->target != *a)
+		rr(a, b, reverse);
 }
