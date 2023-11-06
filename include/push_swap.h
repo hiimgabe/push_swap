@@ -24,7 +24,7 @@ char	**ft_split_argv(char const *str, char c);
 
 // UTILS
 int		ft_lst_size(t_node *stack);
-int		ft_atol(const char *str);
+long	ft_atol(const char *str);
 void	ft_insert_end(t_node **root, long value);
 void	set_position(t_node *stack);
 void	set_target(t_node *a, t_node *b);

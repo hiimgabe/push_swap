@@ -6,13 +6,13 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:12:31 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/03 17:55:11 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/06 17:51:58 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
 	int	signs;
 	long	n;

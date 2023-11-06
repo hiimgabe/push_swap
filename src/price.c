@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:37:35 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/04 12:01:07 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/06 17:03:36 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	set_price(t_node *a, t_node *b)
 		b->price = b->position;
 		if (!b->above_median)
 			b->price = len_b - b->position;
-		else if (b->target->above_median)
+		if (b->target->above_median)
 			b->price += b->target->position;
 		else
 			b->price += len_a - b->target->position;
