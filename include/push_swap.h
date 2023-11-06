@@ -37,11 +37,14 @@ t_node	*ft_cheapest(t_node *stack);
 // PRICE
 void	set_price(t_node *a, t_node *b);
 
+// CLEAR
+void	clear_stack(t_node **stack);
+
 // INIT
 void	init_nodes(t_node **a, t_node **b);
 
 // STACK
-void    ft_init_stack(t_node **stack, char **argv);
+void    ft_init_stack(t_node **stack, char **argv, bool split);
 void	smallest_to_top(t_node **stack, t_node *smallest, char c);
 
 // SWAP
