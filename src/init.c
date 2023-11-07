@@ -6,56 +6,20 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:05:14 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/06 22:38:14 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/07 16:26:46 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	clear_stack(t_node **stack)
-{
-	t_node	*next;
-	t_node	*current;
-
-	if (!stack || !*stack)
-		return ;
-	current = *stack;
-	while (current)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-}
-
-void	free_array(char **argv)
+static bool	check_char(char *str)
 {
 	int	i;
 
-	i = 1;
-	if (!argv)
-		return ;
-	free(*argv);
-	while (argv[i])
+	i = 0;
+	while (str[i])
 	{
-		free(argv[i]);
-		i++;
-	}
-	free(argv);
-}
-
-void	exit_error(t_node **stack)
-{
-	clear_stack(stack);
-	ft_printf("Error\n");
-	exit (0);
-}
-
-static bool	check_char(char *str)
-{
-	while (*str != 0)
-	{
-		if (!ft_isdigit(*str))
+		if ((!ft_isdigit(*str) && *str != 45) || (str[i] == 45 && !ft_isdigit(str[i + 1])))
 			return (false);
 		str++;
 	}

@@ -25,9 +25,6 @@ char	**ft_split_argv(char const *str, char c);
 // UTILS
 int		ft_lst_size(t_node *stack);
 long	ft_atol(const char *str);
-void	ft_insert_end(t_node **root, long value);
-void	set_position(t_node *stack);
-void	set_target(t_node *a, t_node *b);
 bool	ft_is_sorted(t_node *stack);
 t_node	*ft_get_last_node(t_node *stack, bool second_last);
 t_node	*ft_smallest(t_node *stack);
@@ -37,11 +34,16 @@ t_node	*ft_cheapest(t_node *stack);
 // PRICE
 void	set_price(t_node *a, t_node *b);
 
-// CLEAR
+// EXIT
 void	clear_stack(t_node **stack);
+void	free_array(char **argv);
+void	exit_error(t_node **stack);
 
 // INIT
 void	init_nodes(t_node **a, t_node **b);
+void	ft_insert_end(t_node **root, long value);
+void	set_position(t_node *stack);
+void	set_target(t_node *a, t_node *b);
 
 // STACK
 void    ft_init_stack(t_node **stack, char **argv, bool split);
