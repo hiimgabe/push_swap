@@ -53,15 +53,15 @@ void	smallest_to_top(t_node **stack, t_node *smallest, char c);
 void	ft_swap(t_node **stack);
 void    ft_push(t_node **push, t_node **stack);
 void    ft_rotate(t_node **stack, bool reverse);
-void	ft_rotate_both(t_node **a, t_node **b, bool reverse);
-void	sa(t_node **stack);
-void	sb(t_node **stack);
-void	ss(t_node **stack_a, t_node **stack_b);
-void    pb(t_node **stack_a, t_node **stack_b);
-void	pa(t_node **stack_a, t_node **stack_b);
-void	ra(t_node **stack, bool reverse);
-void	rb(t_node **stack, bool reverse);
-void	rr(t_node **a, t_node **b, bool reverse);
+void	ft_rotate_both(t_node **a, t_node **b, bool reverse, bool silent);
+void	sa(t_node **stack, bool silent);
+void	sb(t_node **stack, bool silent);
+void	ss(t_node **stack_a, t_node **stack_b, bool silent);
+void    pb(t_node **stack_a, t_node **stack_b, bool silent);
+void	pa(t_node **stack_a, t_node **stack_b, bool silent);
+void	ra(t_node **stack, bool reverse, bool silent);
+void	rb(t_node **stack, bool reverse, bool silent);
+void	rr(t_node **a, t_node **b, bool reverse, bool silent);
 
 // TINY SORT
 void    tiny_sort(t_node **a);

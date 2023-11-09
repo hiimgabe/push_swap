@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 15:19:26 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/02 13:44:29 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/09 11:31:23 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,16 @@ void    ft_push(t_node **src, t_node **stack)
 		*stack = push;
 	}
 }
-void    pb(t_node **stack_a, t_node **stack_b)
+void    pb(t_node **stack_a, t_node **stack_b, bool silent)
 {
 	ft_push(stack_a, stack_b);
-	ft_printf("pb\n");
+	if (!silent)
+		ft_printf("pb\n");
 }
 
-void	pa(t_node **stack_a, t_node **stack_b)
+void	pa(t_node **stack_a, t_node **stack_b, bool silent)
 {
 	ft_push(stack_b, stack_a);
-	ft_printf("pa\n");
+	if (!silent)
+		ft_printf("pa\n");
 }

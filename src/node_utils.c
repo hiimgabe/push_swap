@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   node_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:37:56 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/05 02:00:10 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/09 11:33:33 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,16 +96,16 @@ void	smallest_to_top(t_node **stack, t_node *smallest, char c)
 		if (c == 'a')
 		{
 			if (smallest->above_median)
-				ra(stack, false);
+				ra(stack, false, false);
 			else
-				ra(stack, true);
+				ra(stack, true, false);
 		}
 		else
 		{
 			if (smallest->above_median)
-				rb(stack, false);
+				rb(stack, false, false);
 			else
-				rb(stack, true);
+				rb(stack, true, false);
 		}
 	}
 }

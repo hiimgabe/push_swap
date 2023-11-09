@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:36:02 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/05 00:13:40 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/09 11:34:52 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ void	finish_rotation(t_node **stack, t_node *cheapest, char c)
 		if (c == 'a')
 		{
 			if (cheapest->above_median)
-				ra(stack, false);
+				ra(stack, false, false);
 			else
-				ra(stack, true);
+				ra(stack, true, false);
 		}
 		else
 		{
 			if (cheapest->above_median)
-				rb(stack, false);
+				rb(stack, false, false);
 			else
-				rb(stack, true);
+				rb(stack, true, false);
 		}
 	}
 }
@@ -39,12 +39,12 @@ void	move_node(t_node **a, t_node **b)
 
 	cheapest = ft_cheapest(*b);
 	if (cheapest->above_median && cheapest->target->above_median)
-		ft_rotate_both(a, b, false);
+		ft_rotate_both(a, b, false, false);
 	else if (!cheapest->above_median && !cheapest->target->above_median)
-		ft_rotate_both(a, b, true);
+		ft_rotate_both(a, b, true, false);
 	finish_rotation(b, cheapest, 'b');
 	finish_rotation(a, cheapest->target, 'a');
-	pa(a, b);
+	pa(a, b, false);
 }
 
 void	push_swap(t_node **a, t_node **b)
@@ -66,8 +66,8 @@ void	push_swap(t_node **a, t_node **b)
 	while (*a != top)
 	{
 		if (top->above_median)
-			ra(a, false);
+			ra(a, false, false);
 		else
-			ra(a, true);
+			ra(a, true, false);
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:17:51 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/07 17:41:28 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/09 11:50:11 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,28 @@
 
 void	exec_command(char *line, t_node **a, t_node **b)
 {
+	if (!ft_strncmp("sa", line, 2))
+		sa(&a, true);
+	else if (!ft_strncmp("sb", line, 2))
+		sb(&b, true);
+	else if (!ft_strncmp("ss", line, 2))
+		ss(&a, &b, true);
+	else if (!ft_strncmp("pa", line, 2))
+		pa(&a, &b, true);
+	else if (!ft_strncmp("pb", line, 2))
+		pb(&a, &b, true);
+	else if (!ft_strncmp("ra", line, 2))
+		ra(&a, false, true);
+	else if (!ft_strncmp("rb", line, 2))
+		rb(&b, false, true);
+	else if (!ft_strncmp("rr", line, 2))
+		rr(&b, false, true);
+	else if (!ft_strncmp("rra", line, 3))
+		ra(&b, true, true);
+	else if (!ft_strncmp("rrb", line, 3))
+		rb(&b, true, true);
+	else if (!ft_strncmp("rrr", line, 3))
+		rotate_both(&a, &b, false, true);
 }
 
 void	read_command(t_node **a, t_node **b, int i)
@@ -61,7 +83,7 @@ int main(int argc, char **argv)
 	if (!ft_is_sorted(a))
 	{
 		if (ft_lst_size(a) == 2)
-			sa(&a);
+			sa(&a, false);
 		else if(ft_lst_size(a) == 3)
 			tiny_sort(&a);
 		else

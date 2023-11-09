@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:52:30 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/02 14:50:47 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/09 11:30:45 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,24 @@ void	ft_swap(t_node **stack)
 	}
 }
 
-void	sa(t_node **stack)
+void	sa(t_node **stack, bool silent)
 {
 	ft_swap(stack);
-	ft_printf("sa\n");
+	if (!silent)
+		ft_printf("sa\n");
 }
 
-void	sb(t_node **stack)
+void	sb(t_node **stack, bool silent)
 {
 	ft_swap(stack);
-	ft_printf("sb\n");
+	if (!silent)
+		ft_printf("sb\n");
 }
 
-void	ss(t_node **stack_a, t_node **stack_b)
+void	ss(t_node **stack_a, t_node **stack_b, bool silent)
 {
 	ft_swap(stack_a);
 	ft_swap(stack_b);
-	ft_printf("ss\n");
+	if (!silent)
+		ft_printf("ss\n");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_to_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 12:52:59 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/05 00:51:42 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/09 11:35:37 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ void	best_rotate(t_node **a, int	mid)
 	descent = descent_ocurr(*a, mid);
 	if (ascent < descent)
 		while (ascent--)
-			ra(a, false);
+			ra(a, false, false);
 	else
 		while (descent--)
-			ra(a, true);
+			ra(a, true, false);
 }
 
 void	bubble_sort(int	*stack, int	size)
@@ -120,7 +120,7 @@ void	push_to_b(t_node **a, t_node **b)
 		while (rotate-- > 0)
 		{
 			if ((*a)->value < mid)
-				pb(a, b);
+				pb(a, b, false);
 			else
 				best_rotate(a, mid);
 		}

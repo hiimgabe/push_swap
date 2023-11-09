@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:36:24 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/06 22:39:50 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/09 11:33:00 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	if (!ft_is_sorted(a))
 	{
 		if (ft_lst_size(a) == 2)
-			sa(&a);
+			sa(&a, false);
 		else if(ft_lst_size(a) == 3)
 			tiny_sort(&a);
 		else

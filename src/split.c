@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:59:48 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/06 17:34:59 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/09 11:29:44 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**ft_split_argv(char const *str, char c)
 	res = (char **) malloc(sizeof(char *) * (howmanywords(str, c) + 2));
 	if (!res || !str)
 		return (NULL);
-	res[w++] = '\0';
+	res[w++] = "\0";
 	while (*str)
 	{
 		if (*str != c)
