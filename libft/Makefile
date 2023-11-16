@@ -6,7 +6,7 @@
 #    By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 10:18:50 by gamoreir          #+#    #+#              #
-#    Updated: 2023/11/16 18:17:45 by gabe             ###   ########.fr        #
+#    Updated: 2023/11/16 18:24:55 by gabe             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,4 +47,3 @@ fclean: clean
 	@echo "$(RED)$(NAME) deleted$(END)"
 
 re: fclean all
-

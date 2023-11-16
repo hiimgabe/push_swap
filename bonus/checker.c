@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:17:51 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/13 14:19:36 by gabe             ###   ########.fr       */
+/*   Updated: 2023/11/16 20:39:38 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	check_line(char *line)
 		|| !ft_strncmp("ss", line, 3) || !ft_strncmp("pa", line, 3)
 		|| !ft_strncmp("pb", line, 3) || !ft_strncmp("ra", line, 3)
 		|| !ft_strncmp("rb", line, 3) || !ft_strncmp("rr", line, 3)
-		|| !ft_strncmp("rra", line, 3) || !ft_strncmp("rrb", line, 3)
-		|| !ft_strncmp("rrr", line, 3))
+		|| !ft_strncmp("rra", line, 4) || !ft_strncmp("rrb", line, 4)
+		|| !ft_strncmp("rrr", line, 4))
 		return (1);
 	return (0);
 }
@@ -42,8 +42,8 @@ void	exec_command(char *line, t_node **a, t_node **b)
 		rb(b, false, true);
 	else if (!ft_strncmp("rr", line, 3))
 		rr(a, b, false, true);
-	else if (!ft_strncmp("rra", line, 4))
-		ra(b, true, true);
+	else if (!ft_strncmp("rra", line, 3))
+		ra(a, true, true);
 	else if (!ft_strncmp("rrb", line, 4))
 		rb(b, true, true);
 	else if (!ft_strncmp("rrr", line, 4))
