@@ -19,8 +19,8 @@ Project from Rank 02 of 42 Porto Common Core. It's about exploring sorting algor
 |rrr|rra and rrb at the same time.|
 
 ## **Mandatory**
-Read and sort a valid list of numbers.
-A valid list would be: 45 -12 5 0 23 or "82 -2 928 -32 43 2"
+Read and sort a valid list of numbers.<br>
+A valid list would be: 45 -12 5 0 23 or "82 -2 928 -32 43 2"<br>
 Anything else is handled as an error.
 
 ## **Bonus**
