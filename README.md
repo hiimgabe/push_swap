@@ -1,7 +1,7 @@
 # **push_swap**
 
 ## **About**
-Project from Rank 02 of 42 Porto Common Core. It's about exploring sorting algorithms and trying to sort a list of numbers with the least number of movements.
+Project from Rank 02 of 42 Porto Common Core. It's about exploring sorting algorithms and the objective is to sort a list of numbers with the least number of movements.
 
 ## **Movement table**
 |Command|Description|
