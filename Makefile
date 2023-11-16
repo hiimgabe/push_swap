@@ -20,29 +20,41 @@ INCLUDE = -I include
 MAKE = make -C
 LIBFT_PATH = libft
 LIBFT = -L ${LIBFT_PATH} -lft
-.c.o:
-	${CC} ${CFLAGS} ${INCLUDE} -c $< -o ${<:.c=.o}
 
-${NAME_BONUS}: ${OBJ_BONUS}
-	${MAKE} ${LIBFT_PATH}
-	${CC} ${OBJ_BONUS} ${LIBFT} -o ${NAME_BONUS}
+GREEN		= \033[38;5;47m
+YELLOW		= \033[38;5;226m
+RED			= \033[38;5;196m
+END 		= \033[0m
+
+.c.o:
+	@${CC} ${CFLAGS} ${INCLUDE} -c $< -o ${<:.c=.o}
+	@echo "[$(GREEN)compiling$(END)]: $<"
 
 ${NAME}: ${OBJ}
-	${MAKE} ${LIBFT_PATH}
-	${CC} ${OBJ} ${LIBFT} -o ${NAME}
+	@${MAKE} ${LIBFT_PATH}
+	@${CC} ${OBJ} ${LIBFT} -o ${NAME}
+	@echo "$(GREEN)$(NAME) created$(END)"
+
+${NAME_BONUS}: ${OBJ_BONUS}
+	@${MAKE} ${LIBFT_PATH}
+	@${CC} ${OBJ_BONUS} ${LIBFT} -o ${NAME_BONUS}
+	@echo "$(GREEN)$(NAME_BONUS) created$(END)"
 
 all: ${NAME}
 
 bonus: ${NAME_BONUS}
 
 clean:
-	${MAKE} ${LIBFT_PATH} clean
-	${RM} ${OBJ}
-	${RM} ${OBJ_BONUS}
+	@${MAKE} ${LIBFT_PATH} clean
+	@${RM} ${OBJ}
+	@${RM} ${OBJ_BONUS}
+	@echo "$(RED)cleaning objects$(END)"
 
 fclean: clean
-	${MAKE} ${LIBFT_PATH} fclean
-	${RM} ${NAME}
-	${RM} ${NAME_BONUS}
+	@${MAKE} ${LIBFT_PATH} fclean
+	@${RM} ${NAME}
+	@${RM} ${NAME_BONUS}
+	@echo "$(RED)$(NAME) deleted$(END)"
+	@echo "$(RED)$(NAME_BONUS) deleted$(END)"
 
 re: fclean all
