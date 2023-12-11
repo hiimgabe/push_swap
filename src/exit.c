@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:13:00 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/07 16:14:16 by gabe             ###   ########.fr       */
+/*   Updated: 2023/12/11 10:12:14 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	free_array(char **argv)
 	i = 1;
 	if (!argv)
 		return ;
-	free(*argv);
 	while (argv[i])
 	{
 		free(argv[i]);
