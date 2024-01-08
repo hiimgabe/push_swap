@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:53:21 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/03 17:59:41 by gabe             ###   ########.fr       */
+/*   Updated: 2024/01/08 14:46:36 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	set_target(t_node *a, t_node *b)
 	start = a;
 	while (b)
 	{
-		best_target = INT_MAX;		
+		best_target = INT_MAX;
 		while (a)
 		{
 			if (a->value > b->value && a->value < best_target)

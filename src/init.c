@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:05:14 by gabe              #+#    #+#             */
-/*   Updated: 2023/12/11 10:08:49 by gabe             ###   ########.fr       */
+/*   Updated: 2024/01/08 14:42:41 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ static bool	check_char(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if ((!ft_isdigit(*str) && *str != 45) || (str[i] == 45 && !ft_isdigit(str[i + 1])))
+		if ((!ft_isdigit(*str) && *str != 45)
+			|| (str[i] == 45 && !ft_isdigit(str[i + 1])))
 			return (false);
 		str++;
 	}
@@ -37,16 +38,17 @@ static bool	is_duplicate(t_node *stack, long nb)
 	return (false);
 }
 
-void    ft_init_stack(t_node **stack, char **argv, bool split)
+void	ft_init_stack(t_node **stack, char **argv, bool split)
 {
 	long	nb;
-	int 	i;
+	int		i;
 
 	i = 1;
 	while (argv[i])
 	{
 		nb = ft_atol(argv[i]);
-		if (nb < INT_MIN || nb > INT_MAX || is_duplicate(*stack, nb) || !check_char(argv[i]))
+		if (nb < INT_MIN || nb > INT_MAX
+			|| is_duplicate(*stack, nb) || !check_char(argv[i]))
 			exit_error(stack);
 		ft_insert_end(stack, nb);
 		i++;

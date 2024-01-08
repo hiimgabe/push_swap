@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:59:48 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/09 11:29:44 by gamoreir         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:41:27 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	**ft_split_argv(char const *str, char c)
 		{
 			res[w] = addword(str, c);
 			while (*str && *str != c)
-					str++;
+				str++;
 			w++;
 		}
 		else

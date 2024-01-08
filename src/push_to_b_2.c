@@ -1,36 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tiny_sort.c                                        :+:      :+:    :+:   */
+/*   push_to_b_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 14:42:26 by gabe              #+#    #+#             */
-/*   Updated: 2024/01/08 14:47:04 by gabe             ###   ########.fr       */
+/*   Created: 2024/01/08 14:57:52 by gabe              #+#    #+#             */
+/*   Updated: 2024/01/08 15:00:13 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	tiny_sort(t_node **a)
+int	descent_ocurr(t_node *a, int mid)
 {
-	t_node	*highest;
+	int		ocurr;
+	t_node	*last;
 
-	highest = ft_highest(*a);
-	if (highest == *a)
-		ra(a, false, false);
-	else if (highest == (*a)->next)
-		ra(a, true, false);
-	if ((*a)->value > (*a)->next->value)
-		sa(a, false);
+	ocurr = ft_lst_size(a);
+	last = ft_get_last_node(a, false);
+	while (last->value != a->value)
+	{
+		if (last->value < mid)
+			return (ocurr);
+		ocurr--;
+		last = get_node(a, ocurr);
+	}
+	return (0);
 }
 
-void	small_sort(t_node **a, t_node **b)
+int	ascent_ocurr(t_node *a, int mid)
 {
-	while (ft_lst_size(*a) > 3)
+	int	ocurr;
+
+	ocurr = 0;
+	while (a)
 	{
-		init_nodes(a, b);
-		smallest_to_top(a, ft_smallest(*a), 'a');
-		pb(a, b, false);
+		if (a->value < mid)
+			return (ocurr);
+		ocurr++;
+		a = a->next;
 	}
+	return (0);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 13:46:53 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/09 11:28:42 by gamoreir         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:45:37 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_rotate(t_node **stack, bool reverse)
+void	ft_rotate(t_node **stack, bool reverse)
 {
 	t_node	*rotate;
 	t_node	*last;
@@ -87,7 +87,7 @@ void	rr(t_node **a, t_node **b, bool reverse, bool silent)
 
 void	ft_rotate_both(t_node **a, t_node **b, bool reverse, bool silent)
 {
-	t_node *cheapest;
+	t_node	*cheapest;
 
 	cheapest = ft_cheapest(*b);
 	while (cheapest != *b && cheapest->target != *a)

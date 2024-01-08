@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 12:52:59 by gabe              #+#    #+#             */
-/*   Updated: 2023/12/11 10:48:46 by gabe             ###   ########.fr       */
+/*   Updated: 2024/01/08 14:58:25 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,39 +19,7 @@ t_node	*get_node(t_node *a, int i)
 	return (a);
 }
 
-int	descent_ocurr(t_node *a, int mid)
-{
-	int		ocurr;
-	t_node	*last;
-
-	ocurr = ft_lst_size(a);
-	last = ft_get_last_node(a, false);
-	while (last->value != a->value)
-	{
-		if (last->value < mid)
-			return (ocurr);
-		ocurr--;
-		last = get_node(a, ocurr);
-	}
-	return (0);
-}
-
-int	ascent_ocurr(t_node *a, int mid)
-{
-	int	ocurr;
-
-	ocurr = 0;
-	while (a)
-	{
-		if (a->value < mid)
-			return (ocurr);
-		ocurr++;
-		a = a->next;
-	}
-	return (0);
-}
-
-void	best_rotate(t_node **a, int	mid)
+void	best_rotate(t_node **a, int mid)
 {
 	int	ascent;
 	int	descent;
@@ -66,7 +34,7 @@ void	best_rotate(t_node **a, int	mid)
 			ra(a, true, false);
 }
 
-void	bubble_sort(int	*stack, int	size)
+void	bubble_sort(int *stack, int size)
 {
 	int	i;
 	int	tmp;

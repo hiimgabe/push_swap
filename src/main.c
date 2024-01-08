@@ -6,16 +6,16 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:36:24 by gabe              #+#    #+#             */
-/*   Updated: 2023/12/11 10:07:37 by gabe             ###   ########.fr       */
+/*   Updated: 2024/01/08 14:48:51 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_node  *a;
-	t_node  *b;
+	t_node	*a;
+	t_node	*b;
 
 	a = NULL;
 	b = NULL;
@@ -28,12 +28,12 @@ int main(int argc, char **argv)
 	{
 		if (ft_lst_size(a) == 2)
 			sa(&a, false);
-		else if(ft_lst_size(a) == 3)
+		else if (ft_lst_size(a) == 3)
 			tiny_sort(&a);
 		else
 			push_swap(&a, &b);
 	}
 	clear_stack(&a);
 	clear_stack(&b);
-	return(0);
+	return (0);
 }

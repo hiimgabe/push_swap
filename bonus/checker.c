@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:17:51 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/17 11:44:44 by gabe             ###   ########.fr       */
+/*   Updated: 2024/01/08 15:04:58 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,10 @@ void	read_command(t_node **a, t_node **b, int i)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_node  *a;
-	t_node  *b;
+	t_node	*a;
+	t_node	*b;
 
 	a = NULL;
 	b = NULL;
@@ -98,5 +98,5 @@ int main(int argc, char **argv)
 		ft_printf("KO\n");
 	clear_stack(&a);
 	clear_stack(&b);
-	return(0);
+	return (0);
 }

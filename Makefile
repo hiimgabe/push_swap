@@ -2,11 +2,11 @@ NAME = push_swap
 
 NAME_BONUS = checker
 
-SRC = src/main.c src/init.c src/utils.c src/node_utils.c src/split.c src/swap.c src/push.c src/rotate.c src/tiny_sort.c \
-		src/target.c src/price.c src/push_swap.c src/push_to_b.c src/exit.c
+SRC = src/main.c src/init.c src/utils.c src/node_utils.c src/node_utils_2.c src/split.c src/swap.c src/push.c src/rotate.c \
+		src/tiny_sort.c src/target.c src/price.c src/push_swap.c src/push_to_b.c src/push_to_b_2.c src/exit.c
 
-SRC_BONUS = bonus/checker.c src/init.c src/utils.c src/node_utils.c src/split.c src/swap.c src/push.c src/rotate.c src/tiny_sort.c \
-			src/target.c src/price.c src/push_swap.c src/push_to_b.c src/exit.c
+SRC_BONUS = bonus/checker.c src/init.c src/utils.c src/node_utils.c src/node_utils_2.c src/split.c src/swap.c src/push.c \
+			src/rotate.c src/tiny_sort.c src/target.c src/price.c src/push_swap.c src/push_to_b.c src/push_to_b_2.c src/exit.c
 
 
 OBJ = ${SRC:.c=.o}

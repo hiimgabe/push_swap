@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:52:30 by gabe              #+#    #+#             */
-/*   Updated: 2023/11/09 11:30:45 by gamoreir         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:44:29 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	ft_swap(t_node **stack)
 
 	if (!stack || !*stack)
 		return ;
-	if ((* stack)->next)
+	if ((*stack)->next)
 	{
 		temp = *stack;
-		*stack = (* stack)->next;
-		temp->next = (* stack)->next;
-		(* stack)->next = temp;
+		*stack = (*stack)->next;
+		temp->next = (*stack)->next;
+		(*stack)->next = temp;
 	}
 }
 
