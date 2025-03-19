@@ -1,9 +1,21 @@
-# **push_swap**
+# push_swap
 
-## **About**
+## Contents
+
+<ul style="list-style-type:disc">
+  <li><a href="#about">About</a></li>
+  <li><a href="#moves">Moves</a></li>
+  <li><a href="#mandatory">Mandatory</a></li>
+  <li><a href="#bonus">Bonus</a></li>
+  <li><a href="#usage">Usage</a></li>
+  <li><a href="#visualization">Visualization</a></li>
+  <li><a href="#norme">Norme</a></li>
+</ul>
+
+## About
 Project from Rank 02 of 42 Porto Common Core. It's about exploring sorting algorithms and the objective is to sort a list of numbers with the least number of movements.
 
-## **Movement table**
+## Moves
 |Command|Description|
 |-|-|
 |sa|Swap the first 2 elements at the top of stack a.|
@@ -18,15 +30,15 @@ Project from Rank 02 of 42 Porto Common Core. It's about exploring sorting algor
 |rrb|Shift down all elements of stack b by 1.<br>The last element becomes the first one.|
 |rrr|rra and rrb at the same time.|
 
-## **Mandatory**
+## Mandatory
 Read and sort a valid list of numbers.<br>
 A valid list would be: 45 -12 5 0 23 or "82 -2 928 -32 43 2"<br>
 Anything else is handled as an error.
 
-## **Bonus**
+## Bonus
 Implement a `checker`. The program will wait for you to input the commands you want to run to sort the list. If your moves sorted the list of numbers successfully it prints "OK" else it prints "KO".
 
-## **Usage**
+## Usage
 Compile using `make` and run `push_swap` with your list of numbers.
 ```sh
 $ ./push_swap 45 -12 5 0 23
@@ -58,8 +70,19 @@ rra
 KO
 ```
 
-## **Visualization**
+## Visualization
 push_swap visualization with the help of <a href="https://github.com/o-reo/push_swap_visualizer">push_swap_vizualizer</a>.
 <div>
 	<img src="push_swap.gif">
 </div>
+
+## Norme
+
+All 42 projects must be written following the **Norme**.
+
+	- No for, do while, switch, case or goto are allowed
+	- No more than 25 lines per function and 5 functions per file
+	- No assigns and declarations in the same line (unless static)
+ 	- Each line must be at most 80 columns wide, comments included
+	- A function can take 4 named parameters maximum
+	- No more than 5 variables in 1 function
